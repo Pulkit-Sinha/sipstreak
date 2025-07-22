@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:sipstreak/models/user_data.dart';
 import 'package:sipstreak/providers/user_data_provider.dart';
 import 'package:sipstreak/screens/home_screen.dart';
+import 'package:sipstreak/services/daily_recalculation_service.dart';
 import 'name_screen.dart';
 import 'gender_screen.dart';
 import 'body_stats_screen.dart';
@@ -81,7 +82,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       location: location,
     );
     
-    await UserDataProvider.saveUserData(userData);
+    await UserDataProvider.saveUserDataWithTarget(userData);
+    DailyRecalculationService.startDailyRecalculation();
     
     if (mounted) {
       Navigator.of(context).pushReplacement(

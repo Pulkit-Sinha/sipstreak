@@ -13,6 +13,12 @@ class UserDataProvider {
     await prefs.setBool(_onboardingKey, true);
   }
 
+  // Save user data with calculated water target
+  static Future<void> saveUserDataWithTarget(UserData userData) async {
+    final userDataWithTarget = await userData.calculateWaterTarget();
+    await saveUserData(userDataWithTarget);
+  }
+
   // Get user data
   static Future<UserData?> getUserData() async {
     final prefs = await SharedPreferences.getInstance();
