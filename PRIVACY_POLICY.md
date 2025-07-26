@@ -14,9 +14,10 @@ SipStreak ("we," "our," or "us") is committed to protecting your privacy. This P
 - **Physical Statistics**: Weight and height for personalized water intake calculations
 - **Activity Level**: Your daily activity level (sedentary, light, moderate, intense)
 
-### Location Data
+### Location Data  
 - **Approximate Location**: Used exclusively to fetch local weather data for accurate hydration calculations
-- Location data is only used for weather API requests and is not stored permanently
+- We collect city-level location accuracy, not precise GPS coordinates
+- Location data is only used for weather API requests and is stored locally on your device
 
 ### Usage Data
 - **Water Intake Records**: Daily water consumption logs with timestamps

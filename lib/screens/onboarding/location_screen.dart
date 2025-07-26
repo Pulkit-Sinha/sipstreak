@@ -42,7 +42,9 @@ class _LocationScreenState extends State<LocationScreen> {
         throw Exception('Location permissions are permanently denied, we cannot request permissions.');
       }
 
-      Position position = await Geolocator.getCurrentPosition();
+      Position position = await Geolocator.getCurrentPosition(
+        desiredAccuracy: LocationAccuracy.low,
+      );
       final locationString = '${position.latitude},${position.longitude}';
       
       setState(() {
